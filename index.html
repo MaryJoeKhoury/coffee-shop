@@ -9,9 +9,9 @@
   <body>
     <main class="main-container">
       <div class="hero-area">
-        <div class="hero-image">
+        <!-- <div class="hero-image">
           <img src="./images/photo-1447933601403-0c6688de566e.avif" />
-        </div>
+        </div> -->
         <nav class="main-nav">
           <div class="main-nav__logo">
             <img src="./images/icons8-coffee-50.png" />
@@ -28,7 +28,23 @@
             <li class="main-nav__item"><a href="#contact-us">Contact Us</a></li>
           </ul>
         </nav>
-        <h1 class="brand-slang">
+        <div class="mobile-menu__items" id="mobile-menu__items">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#about-us">About Us</a></li>
+            <li><a href="#custumor-review">Customer Review</a></li>
+            <li><a href="#contact-us">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <nav>
+          <div class="ham-menu" id="ham-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </nav>
+        <h1 class="brand-slogan">
           Good <span>Coffee</span> will always<br /><br />Find the
           <span>audience</span><br />
           <!-- <button class="order-now">Order Now</button> -->
@@ -154,4 +170,14 @@
       </footer>
     </main>
   </body>
+  <script>
+    const hamMenu = document.getElementById("ham-menu");
+
+    const offScreenMenu = document.getElementById("mobile-menu__items");
+
+    hamMenu.addEventListener("click", () => {
+      hamMenu.classList.toggle("active");
+      offScreenMenu.classList.toggle("active");
+    });
+  </script>
 </html>
