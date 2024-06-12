@@ -9,9 +9,18 @@ body {
   background-color: #110505;
 }
 
+.main-container {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  /* justify-content: center; */
+}
+
 .hero-area {
   position: relative;
+  height: 800px;
 }
+
 .hero-image {
   position: absolute;
   top: 0;
@@ -28,16 +37,34 @@ body {
 .main-nav {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  font-size: 1.4rem;
+  justify-content: space-evenly;
+  font-size: 1.2rem;
+  /* align-items: ; */
+  background-color: rgba(17, 5, 5, 0.6);
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  padding: 0.2rem 1.2rem;
 }
 
 .main-nav a {
   text-decoration: none;
-  color: #f9a56e;
+  color: white;
 }
+
+.main-nav a:hover {
+  color: #deaf67;
+}
+
 .main-nav__logo {
-  margin-left: 2rem;
+  margin-left: 8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-nav__logo span {
+  color: #dfccaf;
 }
 
 .main-nav__items {
@@ -46,20 +73,23 @@ body {
   list-style: none;
   margin-right: 100px;
 }
+
 .main-nav__item {
-  margin-right: 3.5rem;
+  margin-right: 3rem;
+  /* background-color: rgba(249, 165, 110, 0.2); */
 }
 
 .brand-slang {
   color: white;
   text-align: center;
   margin-top: 20rem;
-  padding-bottom: 40rem;
+  /* padding-bottom: 40rem; */
 }
 
 .brand-slang span {
   /* color: #bd6731; */
-  color: #fb6304;
+  color: #deaf67;
+  text-decoration: underline wavy;
 }
 
 /* .order-now {
@@ -71,40 +101,43 @@ body {
 } */
 .about-us {
   color: white;
-
-  margin-top: 4rem;
+  /* margin-top: 4rem; */
 }
 
 .about-us__info {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   margin-top: 2rem;
+  align-items: center;
+  flex-wrap: wrap;
 }
+
 .about-us__title {
   text-align: center;
   color: white;
-  margin-top: 4rem;
+  margin-top: 5rem;
   font-size: 2rem;
 }
 
 .about-us__title span {
-  color: #fb6304;
+  color: #deaf67;
 }
 
 .about-us__description {
   width: 30%;
-  margin: 1rem;
-  font-size: 1.2rem;
+  margin-right: 4rem;
+  font-size: 1.4rem;
 }
 
 .customer-review {
-  margin-top: 5rem;
+  /* margin-top: 5rem; */
 }
 
 .customer-review__title {
   font-size: 2rem;
   text-align: center;
+  margin-top: 5rem;
 }
 .customer-review__cards {
   display: flex;
@@ -122,7 +155,8 @@ body {
   border-radius: 15px;
   padding: 1.2rem;
   position: relative;
-  background-color: #f9a56e;
+  background-color: #deaf67;
+  z-index: -1;
 }
 
 .customers-reviews__quotes {
@@ -145,15 +179,24 @@ body {
   margin: 0 25%;
 }
 
-/* .customers-photo img {
+.customers-photo img {
   height: 100%;
   width: 100%;
   border-radius: 50%;
   object-fit: cover;
-} */
+}
+
 .contact-us {
-  margin-top: 5rem;
+  /* margin-top: 5rem; */
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-us__title {
+  margin-top: 5rem;
 }
 
 .contact-us input[type="text"],
@@ -161,27 +204,78 @@ body {
   width: 50%;
   background-color: #110505;
   /* color: rgb(249, 165, 110); */
-
   border: none;
-  border-bottom: #f9a56e 2px solid;
+  border-bottom: #deaf67 2px solid;
   outline: none;
   height: 50px;
   margin: 1rem;
 }
 
 .contact-us__button {
-  width: 5%;
-  border-radius: 5px;
-  background-color: #f9a56e;
-  padding: 0.6rem;
+  /* width: 5%; */
+  border-radius: 20px;
+  background-color: #deaf67;
+  padding: 1rem 2rem;
   border: none;
+  font-size: 1.2rem;
+  text-align: center;
 }
 
+.contact-us__button:hover {
+  cursor: pointer;
+  background-color: white;
+  color: #deaf67;
+  transition: 500ms;
+  animation-fill-mode: backwards;
+}
 .contact-us textarea {
   background-color: #110505;
-  border: #f9a56e 3px solid;
+  border: #deaf67 3px solid;
   border-radius: 5px;
   width: 50%;
   height: 300px;
-  margin: 1rem 0rem;
+  margin-top: 0.4rem;
+  outline: none;
+}
+.main-footer {
+  background-color: #deaf67;
+  padding: 2rem;
+}
+
+.main-footer__items {
+  /* text-decoration: none; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.main-footer__item {
+  list-style: none;
+  margin-right: 2rem;
+  fill: white;
+}
+
+.main-footer__item :hover {
+  fill: aliceblue;
+}
+
+@media screen and (max-width: 768px) {
+  .hero-area {
+    height: 640px;
+  }
+  .about-us__description {
+    width: 55%;
+  }
+  .about-us__image {
+    width: 65%;
+    margin-top: 2rem;
+  }
+  .about-us__image img {
+    width: 100%;
+  }
+  .contact-us input[type="text"],
+  .contact-us input[type="email"],
+  .contact-us textarea {
+    width: 70%;
+  }
 }
