@@ -115,12 +115,42 @@
       </div>
       <div class="contact-us" id="contact-us">
         <h1 class="contact-us__title">Contact Us</h1>
-        <input type="text" name="name" placeholder="Your Full Name" /><br />
-        <input type="email" name="email" placeholder="Your Email" /><br />
-        <input type="text" name="phone" placeholder="Phone" /><br />
-        <textarea placeholder="Message" class="contact-us__info"></textarea
-        ><br />
-        <input type="submit" name="submit" class="contact-us__button" /><br />
+        <form id="submitForm">
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Full Name"
+            required
+          /><br />
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            required
+          /><br />
+          <input
+            type="text"
+            name="phone"
+            placeholder="Phone"
+            id="phone"
+            required
+          /><br />
+          <span
+            class="error"
+            id="phoneError"
+            style="color: rgb(225, 131, 131)"
+          ></span
+          ><br />
+
+          <textarea
+            placeholder="Message"
+            class="contact-us__info"
+            required
+          ></textarea
+          ><br />
+
+          <input type="submit" name="submit" class="contact-us__button" /><br />
+        </form>
       </div>
       <footer class="main-footer">
         <ul class="main-footer__items">
@@ -179,5 +209,18 @@
       hamMenu.classList.toggle("active");
       offScreenMenu.classList.toggle("active");
     });
+    document
+      .getElementById("submitForm")
+      .addEventListener("submit", function (event) {
+        const phoneInput = document.getElementById("phone").value;
+        const phoneError = document.getElementById("phoneError");
+
+        if (!/^\d+$/.test(phoneInput)) {
+          phoneError.textContent = "Please enter a valid phone number.";
+          event.preventDefault();
+        } else {
+          phoneError.textContent = "";
+        }
+      });
   </script>
 </html>
